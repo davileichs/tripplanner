@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Glare | Responsive Bootstrap 5 Admin Dashboard Template'),
+    'name' => env('APP_NAME', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', 'stage'),
 
     /*
     |--------------------------------------------------------------------------

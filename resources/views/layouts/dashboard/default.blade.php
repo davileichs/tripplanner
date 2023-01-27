@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title data-setting="app_name" data-rightJoin="{{ env('APP_NAME') }}">
+    <title data-setting="app_name" data-rightJoin="">
         {{ env('APP_NAME') }}</title>
     <meta name="description"
         content="">

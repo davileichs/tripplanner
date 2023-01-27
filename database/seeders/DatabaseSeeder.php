@@ -19,6 +19,10 @@ class DatabaseSeeder extends Seeder
             RoleTableSeeder::class,
             UserTableSeeder::class,
             AppSettingTableSeeder::class,
+            DestinationTableSeeder::class,
+            CityTableSeeder::class,
+            CostTabSeeder::class,
+            CostSeeder::class,
         ]);
         if(env('IS_DEMO')) {
             $count = $this->command->ask("How much demo user you wan't", 0);

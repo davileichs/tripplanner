@@ -19,4 +19,6 @@
 <!-- qompacui JavaScript -->
 <script src="{{ asset('js/qompac-ui.js') }}" defer></script>
 <script src="{{ asset('js/qompac-uipro.js') }}" defer></script>
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/6333937b86.js" crossorigin="anonymous"></script>
 @stack('scripts')

@@ -78,7 +78,7 @@
       app_name: {
         target: '[data-setting="app_name"]',
         type: "text",
-        value: "Qompac Ui",
+        value: "Trip planner",
       },
       theme_scheme_direction: {
         target: "html",

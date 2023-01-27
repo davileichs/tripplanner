@@ -54,8 +54,6 @@ class UserController extends Controller
 
         $user = User::create($request->all());
 
-        storeMediaFile($user,$request->profile_image, 'profile_image');
-
         $user->assignRole('user');
 
         // Save user Profile data...
@@ -74,9 +72,8 @@ class UserController extends Controller
     {
         $data = User::with('userProfile','roles')->findOrFail($id);
 
-        $profileImage = getSingleMedia($data, 'profile_image');
 
-        return view('users.profile', compact('data', 'profileImage'));
+        return view('users.profile', compact('data'));
     }
 
     /**
@@ -93,9 +90,8 @@ class UserController extends Controller
 
         $roles = Role::where('status',1)->get()->pluck('title', 'id');
 
-        $profileImage = getSingleMedia($data, 'profile_image');
 
-        return view('users.form', compact('data','id', 'roles', 'profileImage'));
+        return view('users.form', compact('data','id', 'roles'));
     }
 
     /**
@@ -125,11 +121,6 @@ class UserController extends Controller
         // User user data...
         $user->fill($request->all())->update();
 
-        // Save user image...
-        if (isset($request->profile_image) && $request->profile_image != null) {
-            $user->clearMediaCollection('profile_image');
-            $user->addMediaFromRequest('profile_image')->toMediaCollection('profile_image');
-        }
 
         // user profile data....
         $user->userProfile->fill($request->userProfile)->update();
