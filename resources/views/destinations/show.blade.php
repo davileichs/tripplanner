@@ -21,6 +21,16 @@
 
         <h4>{{ $destination->name }}</h4>
 
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
         <div class="card">
             <div class="card-header">
                 <button type="button" class="btn btn-primary mb-5"  data-bs-toggle="modal" data-bs-target="#modalAddCity">Add City</button>
@@ -226,17 +236,17 @@
             <input type="text" class="form-control" name="name" placeholder="name">
             <div class="form-group">
                 <label class="form-label" for="date_start">Date start</label>
-                <input type="date" class="form-control" name="date_ini" id="date_ini" price="">
+                <input type="date" class="form-control" name="date_ini" id="date_ini" value="">
             </div>
             <div class="form-group">
                 <label class="form-label" for="date_end">Date end</label>
-                <input type="date" class="form-control" name="date_end" id="date_end" price="">
+                <input type="date" class="form-control" name="date_end" id="date_end" value="">
             </div>
-            <input type="hidden" name="destination_id" price="{{ $destination->id }}" />
+            <input type="hidden" name="destination_id" value="{{ $destination->id }}" />
           </div>
           <div class="modal-footer">
              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-             <button type="submit" class="btn btn-primary" name="submit" price="Submit">Save</button>
+             <button type="submit" class="btn btn-primary" name="submit" value="Submit">Save</button>
           </div>
         </form>
        </div>
