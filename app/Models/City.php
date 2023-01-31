@@ -64,7 +64,7 @@ class City extends Model
         ->toArray();
 
         $keyed = Arr::keyBy($avgCost, 'cost_tab_id');
-        if($keyed && $keyed[$tab->id]) {
+        if($keyed && !empty($keyed[$tab->id])) {
             return $keyed[$tab->id];
         } else {
             return ['avg' => 0, 'percentage' => 0];
